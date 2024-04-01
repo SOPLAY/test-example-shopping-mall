@@ -59,7 +59,7 @@
     "eslint-plugin-storybook": "^0.6.12",
     "eslint-plugin-vitest": "^0.2.6",
     "jsdom": "^21.1.1",
-    "prettier": "^3.0.0",
+    "prettier": "^3.2.5",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.27",
     "storybook-addon-react-router-v6": "1.0.2",
