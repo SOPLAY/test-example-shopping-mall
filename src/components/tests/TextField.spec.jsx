@@ -14,7 +14,7 @@ it('className prop으로 설정한 css class가 적용된다.', async () => {
   // -> 렌더링 후 DOM에 해당 class가 존재하는지 검증
 
   // render API를 호출 -> 테스트 환경의 jsDOM에 리액트 컴포넌트가 렌더링된 DOM 구조가 반영
-  // jsDOM: Node.js에서 사용하기 위해 많은 웹 표준을 순수 자바스크립트로 구현
+  // jsDOM: Node.js에서 사용하기 위해 많 은 웹 표준을 순수 자바스크립트로 구현
   await render(<TextField className="my-class" />);
 
   // vitest 의 expect 함수를 하용하여 기대 결과를 검증
@@ -24,4 +24,25 @@ it('className prop으로 설정한 css class가 적용된다.', async () => {
   expect(screen.getByPlaceholderText('텍스트를 입력해 주세요.')).toHaveClass(
     'my-class',
   );
+});
+
+describe('placeholder', () => {
+  // it -> test 함수의 alias
+  it('기본 placeholder "텍스트를 입력해 주세요."가 노출된다.', async () => {
+    await render(<TextField />);
+
+    const textInput = screen.getByPlaceholderText('텍스트를 입력해 주세요.');
+
+    // screen.debug();
+
+    expect(textInput).toBeInTheDocument();
+  });
+
+  it('placeholder prop 에 따라 placeholder 가 변경된다.', async () => {
+    await render(<TextField placeholder="상품명을 입력해 주세요." />);
+
+    const textInput = screen.getByPlaceholderText('상품명을 입력해 주세요.');
+
+    expect(textInput).toBeInTheDocument();
+  });
 });
