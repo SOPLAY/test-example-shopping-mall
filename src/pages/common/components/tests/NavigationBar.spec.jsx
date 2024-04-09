@@ -115,7 +115,7 @@ describe('로그인이 된 경우', () => {
 
       expect(screen.getByRole('dialog')).toBeInTheDocument();
       expect(
-        within(dialog).getByText('로그아웃 하시겠습니까?!2'),
+        within(dialog).getByText('로그아웃 하시겠습니까?!'),
       ).toBeInTheDocument();
     });
 
